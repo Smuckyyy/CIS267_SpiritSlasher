@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //Walking animation
-        anim.SetBool("isRunning", moveInput != 0);
+        //anim.SetBool("isRunning", moveInput != 0);
         //Jumping animation
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetFloat("verticalVelocity", rb.linearVelocity.y);
+        //anim.SetBool("isGrounded", isGrounded);
+        //anim.SetFloat("verticalVelocity", rb.linearVelocity.y);
     }
 
     void FixedUpdate()
