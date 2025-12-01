@@ -1457,7 +1457,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 327225d4aad97c74896e5d994d716dc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2020,6 +2020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2529762877599976276, guid: ffd4f0791f779fe42a1b6153c5062736, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2766588561734694159, guid: ffd4f0791f779fe42a1b6153c5062736, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.125988
@@ -2504,7 +2508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   totalCollectablesNeeded: 3
-  nextLevelName: 
+  nextLevelName: Level 2
 --- !u!4 &1252309743
 Transform:
   m_ObjectHideFlags: 0
@@ -3278,6 +3282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2529762877599976276, guid: ffd4f0791f779fe42a1b6153c5062736, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2766588561734694159, guid: ffd4f0791f779fe42a1b6153c5062736, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.05
