@@ -5,6 +5,7 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
+        SceneManager.LoadScene("GameManager");
         SceneManager.LoadScene("Tutorial");
     }
 

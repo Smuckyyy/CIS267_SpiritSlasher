@@ -21,6 +21,20 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private Animator anim;
     private SpriteRenderer sr;
+    [Header("Atttcking")]
+    public GameObject kunai;
+    public GameObject slash;
+    public GameObject shurikin;
+    public float attackSpeed  = 0;
+    private int numOfKunai = 3;
+    private bool shurkinThrown = true;
+
+    // unlocks
+    private bool pierceUpgrade = false;
+    private bool shurikinUpgrade = false;
+    private bool rapidUpgrade = false;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +42,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -38,6 +53,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             HandleJump();
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            melee();
         }
 
         if(moveInput > 0)
@@ -89,6 +108,37 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    void melee()
+    {
+        //if(attackSpeed <= 0)
+       // {
+            Instantiate(slash,transform.position, Quaternion.identity); 
+       // }
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("PierceUpgrade"))
+        {
+            pierceUpgrade = true;
+            GameManager.instance.SetPierce();
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("ShurikinUpgrade"))
+        {
+            shurikinUpgrade = true;
+            GameManager.instance.SetReturn();
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("RapidUpgrade"))
+        {
+            rapidUpgrade = true;
+            GameManager.instance.SetRapid();
+            Destroy(collision.gameObject);
+        }
+    }
+
+
     // private void OnDrawGizmosSelected()
     // {
     //     //Visualize ground check

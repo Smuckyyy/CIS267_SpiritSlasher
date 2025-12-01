@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - PlayerKunai
+  - PlayerSlash
+  - PlayerShurikin
+  - PierceUpgrade
+  - ShurikinUpgrade
+  - RapidUpgrade
   layers:
   - Default
   - TransparentFX
