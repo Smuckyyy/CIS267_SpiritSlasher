@@ -11,12 +11,14 @@ public class EnemyFlying : MonoBehaviour
 
     void Start()
     {
+        FindPlayer();
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void FixedUpdate()
     {
+        //Debug.Log("UPDATE RUNNING: " + gameObject.name);
+
         //This is for if the player isnt found
         if (player == null)
         {
@@ -30,13 +32,29 @@ public class EnemyFlying : MonoBehaviour
 
         if (distance < followRange)
         {
+            //Debug.Log("CHASING PLAYER");
             //This makes the enemy fly towards the player in all directions
             Vector2 direction = (player.position - transform.position).normalized;
-            rb.linearVelocity = direction * speed;
+            rb.velocity = direction * speed;
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
         }
     }
+
+    void FindPlayer()
+{
+    GameObject p = GameObject.FindGameObjectWithTag("Player");
+
+    if (p != null)
+    {
+        player = p.transform;
+    }
+    else
+    {
+        Debug.LogWarning("No player found! Trying again...");
+        Invoke(nameof(FindPlayer), 0.5f);
+    }
+}
 }

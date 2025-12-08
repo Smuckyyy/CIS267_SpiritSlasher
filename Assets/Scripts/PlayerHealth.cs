@@ -42,8 +42,6 @@ public class PlayerHealth : MonoBehaviour
         }
 
         UpdateHealthUI();
-        //If the player is damaged, the iframes will start for however many frames we set so the player cant be damaged immediately again
-        StartCoroutine(InvincibilityFlash());
     }
 
     void Die()
@@ -73,15 +71,34 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator InvincibilityFlash()
+    public void ActivateInvincibility(float duration)
+    {
+        StartCoroutine(InvincibilityForDuration(duration));
+    }
+
+    public System.Collections.IEnumerator InvincibilityForDuration(float duration)
     {
         isInvincible = true;
 
-        //This will make the player flash during the i-frames (after being hit)
-        yield return new WaitForSeconds(iFramesDuration);
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        float elapsed = 0f;
+        float flashInterval = 0.15f;
+
+        while (elapsed < duration)
+        {
+            if (sr != null)
+            sr.enabled = !sr.enabled;
+
+            yield return new WaitForSeconds(flashInterval);
+            elapsed += flashInterval;
+        }
+
+        if (sr != null)
+        sr.enabled = true;
 
         isInvincible = false;
     }
+
 
     void Update()
     {
