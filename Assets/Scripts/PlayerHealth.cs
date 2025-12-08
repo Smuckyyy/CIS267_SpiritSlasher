@@ -54,6 +54,11 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthUI()
     {
+        if (hearts == null || hearts.Length == 0)
+        {
+            return;
+        }
+        
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < currentHealth)
