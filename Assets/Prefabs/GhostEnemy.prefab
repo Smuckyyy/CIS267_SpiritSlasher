@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4759141716530834635}
   - component: {fileID: 6336604289761351765}
   - component: {fileID: 7089850718676527590}
+  - component: {fileID: 6453821975646064150}
   m_Layer: 0
   m_Name: GhostEnemy
   m_TagString: Untagged
@@ -137,7 +138,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -180,3 +181,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6453821975646064150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693477763201364740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de25a11d689c04b41b5b5fe27530a274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  damageAmount: 1

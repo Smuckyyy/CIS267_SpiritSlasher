@@ -9,6 +9,17 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("GameManager");
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit Game");
