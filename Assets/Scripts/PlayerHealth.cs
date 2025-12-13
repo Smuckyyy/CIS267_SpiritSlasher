@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite emptyHeart;
 
     [Header ("I-Frames")]
-    public float iFramesDuration = 1f;
+    public float iFramesDuration = 3f;
     private bool isInvincible = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,12 +42,14 @@ public class PlayerHealth : MonoBehaviour
         }
 
         UpdateHealthUI();
+
+        ActivateInvincibility(iFramesDuration);
     }
 
     void Die()
     {
         Debug.Log("Player Died");
-        SceneManager.LoadScene("GameOver"); //This scene hasnt been created yet but once it is we can load it here
+        SceneManager.LoadScene("GameOver");
     }
 
     void UpdateHealthUI()
@@ -80,21 +82,22 @@ public class PlayerHealth : MonoBehaviour
     {
         isInvincible = true;
 
-        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        //This finds the players sprite and makes it flash for a short amount of time
+        SpriteRenderer player = GetComponentInChildren<SpriteRenderer>();
         float elapsed = 0f;
         float flashInterval = 0.15f;
 
         while (elapsed < duration)
         {
-            if (sr != null)
-            sr.enabled = !sr.enabled;
+            if (player != null)
+            player.enabled = !player.enabled;
 
             yield return new WaitForSeconds(flashInterval);
             elapsed += flashInterval;
         }
 
-        if (sr != null)
-        sr.enabled = true;
+        if (player != null)
+        player.enabled = true;
 
         isInvincible = false;
     }

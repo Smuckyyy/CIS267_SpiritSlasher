@@ -8,6 +8,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            Debug.Log("Enemy hit " + collision.name);
             collision.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
         }
     }

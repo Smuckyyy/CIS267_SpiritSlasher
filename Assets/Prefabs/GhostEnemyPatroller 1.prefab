@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5693477763201364740
+--- !u!1 &5675127357109518947
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4057183378910082144}
-  - component: {fileID: 6738813336043745377}
-  - component: {fileID: 4759141716530834635}
-  - component: {fileID: 6336604289761351765}
-  - component: {fileID: 7089850718676527590}
-  - component: {fileID: 6453821975646064150}
-  - component: {fileID: 8721040626867000915}
+  - component: {fileID: 9015977853757817760}
+  - component: {fileID: 164392799057464849}
+  - component: {fileID: 3740476340246137271}
+  - component: {fileID: 2145625712599272920}
+  - component: {fileID: 4704669122095049804}
+  - component: {fileID: 5444179113258502891}
+  - component: {fileID: 593192487339374379}
   m_Layer: 0
-  m_Name: GhostEnemy
+  m_Name: GhostEnemyPatroller 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4057183378910082144
+--- !u!4 &9015977853757817760
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
+  m_GameObject: {fileID: 5675127357109518947}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2237, y: -1.361, z: 0}
-  m_LocalScale: {x: 0.31265947, y: 0.2805068, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.18, y: -2.18, z: 0}
+  m_LocalScale: {x: 0.4733, y: 0.5018, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6738813336043745377
+--- !u!212 &164392799057464849
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
+  m_GameObject: {fileID: 5675127357109518947}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,39 +83,40 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -8479173864815945027, guid: 45e0427d75ce52545980e060f48b7eb2, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -5960885725751570424, guid: d21477d541f9e5a4a8fb59f599dd580f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.62, y: 4.22}
+  m_Size: {x: 3.01, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4759141716530834635
+--- !u!114 &3740476340246137271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
+  m_GameObject: {fileID: 5675127357109518947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7459361c99382c4e9c81781bd3b936b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1643555d25a2e4d4ebe005a5069c591c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
-  speed: 3
-  followRange: 12
---- !u!61 &6336604289761351765
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  speed: 2
+--- !u!61 &2145625712599272920
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
+  m_GameObject: {fileID: 5675127357109518947}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -143,26 +144,26 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00705868, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.62, y: 4.22}
-    newSize: {x: 3.62, y: 4.22}
+    oldSize: {x: 3.01, y: 3.58}
+    newSize: {x: 3.01, y: 3.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.62, y: 4.22}
+  m_Size: {x: 3.0099955, y: 3.58}
   m_EdgeRadius: 0
---- !u!50 &7089850718676527590
+--- !u!50 &4704669122095049804
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
+  m_GameObject: {fileID: 5675127357109518947}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -179,29 +180,16 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6453821975646064150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de25a11d689c04b41b5b5fe27530a274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  damageAmount: 1
---- !u!61 &8721040626867000915
+--- !u!61 &5444179113258502891
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693477763201364740}
+  m_GameObject: {fileID: 5675127357109518947}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -229,15 +217,28 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.09319317}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.62, y: 4.22}
-    newSize: {x: 3.62, y: 4.22}
+    oldSize: {x: 3.01, y: 3.58}
+    newSize: {x: 3.01, y: 3.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.62, y: 4.22}
+  m_Size: {x: 3.01, y: 3.3936136}
   m_EdgeRadius: 0
+--- !u!114 &593192487339374379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675127357109518947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de25a11d689c04b41b5b5fe27530a274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  damageAmount: 1
