@@ -2,9 +2,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Backing field for the singleton instance
+    private static GameManager _instance;
 
-    public static GameManager instance { get; private set; }
-    private bool pierceUpgrade = false;
+    // Public accessor with lazy-find fallback so other scripts can access instance even if
+    // the GameManager wasn't explicitly placed in the scene.
+    public static GameManager instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                // Try to find an existing GameManager in the scene
+                _instance = FindObjectOfType<GameManager>();
+                if (_instance == null)
+                {
+                    // If none found, create a new GameObject with this component so calls don't fail.
+                    var go = new GameObject("GameManager");
+                    _instance = go.AddComponent<GameManager>();
+                    DontDestroyOnLoad(go);
+                }
+            }
+            return _instance;
+        }
+        private set { _instance = value; }
+    }
+
+    private bool trippleUpgrade = false;
     private bool ReturnUpgrade = false;
     private bool rapidUpgrade = false;
     // these are upgrades player would collect
@@ -12,23 +36,23 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }
     }
-    public void SetPierce()
+    public void Settriple()
     {
-        pierceUpgrade = true;
+        trippleUpgrade = true;
     }
-    public bool GetPierce()
+    public bool Gettriple()
     {
-        return pierceUpgrade;
+        return trippleUpgrade;
     }
     public void SetReturn()
     {
