@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: e81d686a4bcb07948844669d4292273e
   - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 7547afe69a4618b499123e76149623e2
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -17,6 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 2a2a7f0db568a1a4797b57c2c74f5c8a
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: 332c2b09d3087d742a322536823af279
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: a75684e60227c3141bd94dbac476b2cf
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 3a34584765bf0c944a5c1967aecb873e
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: fb1cde396922f5946b75f2e84e73c9a0

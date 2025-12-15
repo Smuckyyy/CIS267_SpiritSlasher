@@ -10,6 +10,7 @@ TagManager:
   - PierceUpgrade
   - ShurikinUpgrade
   - RapidUpgrade
+  - Boss
   layers:
   - Default
   - TransparentFX

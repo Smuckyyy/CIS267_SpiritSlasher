@@ -22,6 +22,10 @@ public class EnemyDamage : MonoBehaviour
             Debug.Log("Enemy hit " + collision.name);
             collision.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
         }
+        if(collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<BossAI>().TakeDamage(damageAmount);
+        }
         if(collision.CompareTag("PlayerSlash"))
         {
             Debug.Log("Player slash hit " + gameObject.name);

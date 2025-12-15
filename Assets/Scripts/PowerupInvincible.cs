@@ -8,11 +8,12 @@ public class PowerupInvincible : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerHealth ph = collision.GetComponent<PlayerHealth>();
+            PlayerHealth player = collision.GetComponent<PlayerHealth>();
             
-            if (ph != null)
+            if (player != null)
             {
-                ph.ActivateInvincibility(duration);
+                
+                player.ActivateInvincibility(duration);
             }
 
             Destroy(gameObject);
